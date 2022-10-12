@@ -1,0 +1,10 @@
+body {
+  margin: 5% 15%;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+}
+table {
+  border: 2px solid black;
+}

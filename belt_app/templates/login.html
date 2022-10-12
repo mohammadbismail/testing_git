@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbortrary</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+    </header>
+    {% for error in messages %}
+    <ul>
+        <li>
+            {{error}}
+        </li>
+    </ul>
+    {% endfor %}
+    <main>
+
+        <form action="/add_user/" method="post">
+            {% csrf_token %}
+            <h1>Register</h1>
+            <div class="form-group row">
+                <label for="firstname">First Name: </label>
+                <input type="text" name="firstname">
+            </div>
+            <div class="form-group row">
+                <label for="lastname">Last Name:</label>
+                <input type="text" name="lastname">
+            </div>
+            <div class="form-group row">
+                <label for="email">Email: </label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-group row">
+                <label for="password">Password: </label>
+                <input type="password" name="password">
+            </div>
+            <div class="form-group row">
+                <label for="passconf">Confirm PW: </label>
+                <input type="password" name="passconf"></p>
+            </div>
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+        <form action="/login_user/" method="post">
+            {% csrf_token %}
+            <h2>Register</h2>
+            <div class="form-group row">
+                <label for="email">Email: </label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-group row">
+                <label for="password">Password: </label>
+                <input type="password" name="password">
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
